@@ -24,7 +24,7 @@ public class SpringExampleApplication {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
 
-        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mappers.xml");
+        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
         sessionFactory.setMapperLocations(res);
 
         return sessionFactory.getObject();
