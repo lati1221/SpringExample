@@ -27,8 +27,29 @@ public class ReviewController {
 		
 	}
 		
+	@RequestMapping("/mybatis/review/insert")
+	@ResponseBody
+	public String createReview() {
+		
+		// 4, 치즈피자, 김인규, 4.5
+//		int count = reviewService.addReview(4, "치즈피자", "김인규", 4.5);
+		
+		// 2, 뿌링클, 김인규, 4.0, 역시 뿌링클은 진리입니다.
+		Review review = new Review();
+		review.setStoreId(2);
+		review.setMenu("뿌링클");
+		review.setUserName("김인규");
+		review.setPoint(4.0);
+		review.setReview("역시 뿌링클은 진리입니다.");
 		
 		
+		int count = reviewService.addReviewByObject(review);
+		
+		
+		
+		
+		return "수행 결과 : " + count;
+	}
 	
 	
 	
