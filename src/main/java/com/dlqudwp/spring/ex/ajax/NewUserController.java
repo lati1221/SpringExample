@@ -42,7 +42,7 @@ public class NewUserController {
 
 			// 성공 실패 여부 
 			// 성공 : {"result":"success"}
-			// 실패 : {"result":"fali"}
+			// 실패 : {"result":"fail"}
 			Map<String, String> resultMap = new HashMap<>();
 			if(count == 1) {  // 성공
 				resultMap.put("result", "success");
